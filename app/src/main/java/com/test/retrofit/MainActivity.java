@@ -13,7 +13,6 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
-import android.widget.EditText;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 
@@ -29,7 +28,6 @@ public class MainActivity extends AppCompatActivity
 
     Button mBtnDorequest;
     TextView mTvShowText;
-    EditText mEtInputName;
     ProgressBar mPb;
     String API = "https://api.github.com";  // BASE URL
     private ApiContract.Presenter mPresenter;
@@ -60,7 +58,6 @@ public class MainActivity extends AppCompatActivity
         navigationView.setNavigationItemSelectedListener(this);
 
 
-        mEtInputName = (EditText) findViewById(R.id.editText);
         mPb = (ProgressBar) findViewById(progressBar);
         findViewById(R.id.button).setOnClickListener(this);
         mTvShowText = (TextView) findViewById(textView3);

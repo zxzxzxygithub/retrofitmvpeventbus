@@ -1,0 +1,10 @@
+# Created by .ignore support plugin (hsz.mobi)
+.gitignore
+.gradle/
+.idea/
+app/libs/
+app/src/androidTest/
+app/src/test/
+build/
+gradle/
+retrofitmvpeventbus.iml

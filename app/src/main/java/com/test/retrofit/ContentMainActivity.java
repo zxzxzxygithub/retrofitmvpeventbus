@@ -3,7 +3,6 @@ package com.test.retrofit;
 import android.app.Activity;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.EditText;
 import android.widget.ProgressBar;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
@@ -34,7 +33,4 @@ public class ContentMainActivity extends Activity implements View.OnClickListene
         }
     }
 
-    private EditText getEditText(){
-        return (EditText) findViewById(R.id.editText);
-    }
 }

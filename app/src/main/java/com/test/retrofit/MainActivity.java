@@ -1,5 +1,6 @@
 package com.test.retrofit;
 
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.NavigationView;
@@ -66,6 +67,10 @@ public class MainActivity extends AppCompatActivity
         setPresenter(new ApiTestPresenter(this));
 
         EventBus.getDefault().register(mPresenter);
+
+        SharedPreferences sharedPreferences=getSharedPreferences("jlkjlk",0);
+        sharedPreferences.edit().putString("sfsfd","fdfdf").commit();
+
 
 
     }

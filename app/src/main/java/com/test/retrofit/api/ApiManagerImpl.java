@@ -1,9 +1,11 @@
 package com.test.retrofit.api;
 
+import com.facebook.stetho.okhttp3.StethoInterceptor;
 import com.test.retrofit.model.ClassfyBean;
 
 import org.greenrobot.eventbus.EventBus;
 
+import okhttp3.OkHttpClient;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
@@ -38,8 +40,13 @@ public class ApiManagerImpl implements ApiManager {
     @Override
     public void initNet() {
         if (mRetrofit == null) {
-            mRetrofit = new Retrofit.Builder().baseUrl(ApiContants.BASE_URL)
-                    .addConverterFactory(GsonConverterFactory.create())
+            Retrofit.Builder retrofitBuilder = new Retrofit.Builder().baseUrl(ApiContants.BASE_URL)
+                    .addConverterFactory(GsonConverterFactory.create());
+            OkHttpClient.Builder builder = new OkHttpClient.Builder();
+            builder.addNetworkInterceptor(new StethoInterceptor());
+            OkHttpClient client = builder.build();
+            retrofitBuilder.client(client);
+            mRetrofit = retrofitBuilder
                     .build();
         }
     }
